@@ -1,0 +1,12 @@
+#!/bin/bash
+
+VERSION=0.0.1
+
+echo Welcome to cowshell $VERSION!
+
+for (( ; ; ))
+do
+  printf "cowshell-$VERSION\$ "
+  read COW
+  echo $COW
+done

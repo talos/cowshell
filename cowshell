@@ -33,7 +33,10 @@ else
 fi
 
 # Tasty
-trap "chew ^C" 2
+for i in {1..32}
+do
+  trap "chew $i" $i
+done
 
 # Just, wow: http://www.textfiles.com/art/cow.txt
 chew() {

@@ -2,7 +2,7 @@
 
 ### Usage:
 
-./cowshell
+`./cowshell`
 
 ### Warnings
 

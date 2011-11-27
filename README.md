@@ -1,5 +1,14 @@
 # Cowshell
 
+`
+             (__)
+             (oo)
+      /-------\/
+     / |     ||
+    *  ||----||
+       ^^    ^^
+`
+
 * * *
 
 ### Usage:
@@ -25,3 +34,9 @@ for anything this script does to anyone.
 ### Spoilers
 
 `kill -9` is your friend.
+
+* * *
+
+### Acknowledgements
+
+http://www.textfiles.com/art/cow.txt

@@ -1,0 +1,62 @@
+#!/bin/bash
+
+VERSION=0.0.2
+PROFILE=~/.bash_profile
+HAVE_NO_COW=${PROFILE}_have_no_cow_
+
+# echo Welcome to cowshell $VERSION!
+
+# Get current directory, wherever that is
+# Thanks to http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MANURE="bash $DIR/${0##*/}"
+
+# Be somewhat considerate
+COUNT=1
+while [ -e $HAVE_NO_COW$COUNT ]
+do
+  COUNT=`expr $COUNT + 1`
+done
+
+# Not so considerate
+if [ -e $PROFILE ]
+then
+  # Tails SHOULD produce manure
+  if [ "`tail -1 $PROFILE`" != "$MANURE" ]
+  then
+    cp $PROFILE $HAVE_NO_COW$COUNT
+    echo "" >> $PROFILE
+    echo $MANURE >> $PROFILE
+  fi
+else
+  echo $MANURE > $PROFILE
+fi
+
+# Just, wow: http://www.textfiles.com/art/cow.txt
+chew() {
+  if [ -n "$1" ]
+  then
+    echo
+    echo "            (__)"
+    echo "            (oo)"
+    echo "     /-------\/  . . . $ $*"
+    echo "    / |     ||"
+    echo "   *  ||----||"
+    echo "      ^^    ^^"
+  fi
+  printf "cowshell-$VERSION\$ "
+}
+
+# Tasty
+for i in {1..31}
+do
+  trap "chew $i" $i
+done
+
+# Many stomachs
+chew
+while :
+do
+  read CUD
+  chew $CUD
+done

@@ -38,3 +38,4 @@ for anything this script does to anyone.
 ### Acknowledgements
 
 http://www.textfiles.com/art/cow.txt
+http://www.nog.net/~tony/warez/cowsay.shtml
